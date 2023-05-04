@@ -70,7 +70,13 @@ export default function Sidbar() {
           </button>
           {/* rounded full  làm cho tấm hình tròn l*/}
           <button className=" overflow-hidden rounded-full">
-            <img className="h-10 w-10 object-cover" src={imgT.src} alt="hihi" />
+            <picture>
+              <img
+                className="h-10 w-10 object-cover"
+                src={imgT.src}
+                alt="hihi"
+              />
+            </picture>
           </button>
         </div>
       </aside>
