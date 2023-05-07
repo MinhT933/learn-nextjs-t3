@@ -2,7 +2,8 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 // import Link from "next/link";
-import Sidbar from "../components/Sibar";
+import Sidbar from "../components/Sildebar/Sibar";
+import Navbar from "y/components/navbar/Navbar";
 
 const Home: NextPage = () => {
   return (
@@ -13,16 +14,8 @@ const Home: NextPage = () => {
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
       <>
-        {/* <div>hihi</div>
-        <div>hehe</div>
-        <div>cho</div>
-        <div>0wrewr</div> */}
+        <Navbar />
         <Sidbar />
-        {/* <div>
-          <h1 className="text-3xl font-bold underline text-red-400 bg-red-500">
-            Hello world!
-          </h1>
-        </div> */}
       </>
     </>
   );

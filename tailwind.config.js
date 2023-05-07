@@ -14,6 +14,9 @@ module.exports = {
       spacing: {
         18: "4.5rem",
       },
+      transitionDelay: {
+        2000: "4000ms",
+      },
     },
   },
   plugins: [],
