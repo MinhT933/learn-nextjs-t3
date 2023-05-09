@@ -17,6 +17,26 @@ module.exports = {
       transitionDelay: {
         2000: "4000ms",
       },
+      animation: {
+        tilt: "tilt 10s infinite linear ",
+        fullSpin: "fullSpin 4s infinite linear ",
+      },
+      keyframes: {
+        tilt: {
+          "0%,50%,100%": {
+            transform: "rotate(0deg)",
+          },
+          "25%": {
+            transform: "rotate(5deg)",
+          },
+          "75%": {
+            transform: "rotate(-5deg)",
+          },
+        },
+        fullSpin: {
+          "100%": { transform: "rotate(-360deg)" },
+        },
+      },
     },
   },
   plugins: [],

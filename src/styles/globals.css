@@ -1,4 +1,12 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
-/* @import './base.css'; */
 @import "tailwindcss/utilities";
+
+@layer utilities {
+  .button::before {
+    @apply absolute left-[-25%] top-[-25%] h-[200px] w-[300px] bg-[conic-gradient(#FF0000_20deg,transparent_120deg)] content-[''];
+  }
+  .button::after {
+    @apply absolute left-[3%] top-[3%] flex h-[94%] w-[94%] items-center justify-center bg-[#0200223] uppercase tracking-[2px] content-['button'];
+  }
+}

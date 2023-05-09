@@ -3,12 +3,15 @@ import { Icon } from "@iconify/react";
 
 import imgT from "../../../public/img/toanhht.jpg";
 import Toolip from "./Toolip";
+import ButtonCustomize from "../button/ButtonCustomize";
+//----------------------------------------------------------------
 
 export interface imgT {
   //   image: HTMLImageElement;
   src: string | imgT;
 }
-export default function Sidbar() {
+export default function Sidbar(Props: any) {
+  let { children } = Props;
   //gọi group để hover
   return (
     <div className="flex bg-gray-100 font-sans text-gray-900">
@@ -19,13 +22,10 @@ export default function Sidbar() {
         <nav className="flex flex-1 flex-col gap-y-4 pt-10 ">
           <a
             className="  group relative rounded-xl bg-gray-100 p-2 text-blue-400 hover:bg-gray-50"
-            href="#"
+            href="/buttonCss/buttonCssPage"
           >
-            <Icon
-              className="h-6 w-6 fill-current"
-              icon="material-symbols:add-box-outline"
-            />
-            <Toolip> Thêm phần tử</Toolip>
+            <Icon className="h-6 w-6 fill-current" icon="mdi:button-cursor" />
+            <Toolip>Nút bấm</Toolip>
           </a>
           <a
             className="group relative rounded-xl bg-gray-100 p-2 text-blue-400 hover:bg-gray-50"
@@ -54,22 +54,23 @@ export default function Sidbar() {
           </a>
         </nav>
         <div className="flex flex-col items-center gap-y-4 py-10">
-          <button className="group relative rounded-xl p-2  text-gray-400 hover:bg-gray-50">
+          <ButtonCustomize className="group relative rounded-xl p-2  text-gray-400 hover:bg-gray-50">
             <Icon
               className="h-6 w-6 stroke-current"
               icon="mdi:alert-circle-outline"
             />
             <Toolip> Thêm phần tử</Toolip>
-          </button>{" "}
-          <button className="group relative  rounded-xl p-2  text-gray-400 hover:bg-gray-50">
+          </ButtonCustomize>
+          <ButtonCustomize className="group relative rounded-xl p-2  text-gray-400 hover:bg-gray-50">
             <Icon
               className="h-6 w-6 stroke-current"
               icon="icon-park-solid:setting"
             />
             <Toolip> Thêm phần tử</Toolip>
-          </button>
+          </ButtonCustomize>
+
           {/* rounded full  làm cho tấm hình tròn l*/}
-          <button className=" overflow-hidden rounded-full">
+          <ButtonCustomize className="overflow-hidden rounded-full">
             <picture>
               <img
                 className="h-10 w-10 object-cover"
@@ -77,19 +78,19 @@ export default function Sidbar() {
                 alt="hihi"
               />
             </picture>
-          </button>
+          </ButtonCustomize>
         </div>
       </aside>
       {/** gap để tạo khoảng cách giữa 2 phần tử gap-x là khoản cách cột gap y là khaonr cách row  */}
       <div className="flex h-screen flex-1 flex-col">
         <header className="flex h-18 items-center  gap-x-6 border-b border-gray-200 bg-white px-8">
-          <button className="flex items-center justify-center rounded-xl bg-gray-200 p-2">
+          <ButtonCustomize className="flex items-center justify-center rounded-xl bg-gray-200 p-2">
             <Icon
               className="h-6 w-6 stroke-current text-gray-400"
               icon="ic:baseline-chevron-left"
             ></Icon>
-          </button>
-          <button className="flex flex-col rounded-xl border border-gray-200 bg-gray-100 px-6 py-2">
+          </ButtonCustomize>
+          <ButtonCustomize className="flex flex-col rounded-xl border border-gray-200 bg-gray-100 px-6 py-2">
             <div className="flex items-center gap-x-1">
               <span> Page: Homepage - hihi</span>
               <Icon
@@ -98,7 +99,7 @@ export default function Sidbar() {
               />
             </div>
             <div className="text-xs text-gray-400">Học hành chăm chỉ</div>
-          </button>
+          </ButtonCustomize>
           <button className="flex items-center justify-center gap-x-4 rounded-xl bg-gray-100 px-4 py-2">
             <Icon
               className="h-6 w-6 stroke-current text-gray-400"
@@ -109,7 +110,7 @@ export default function Sidbar() {
           {/* dấu gạch ngang  */}
           <div className="h-full w-px bg-gray-200" />
           <div className="flex items-center gap-x-3 ">
-            <button className="  rounded-xl from-green-300 to-blue-400  p-2 text-gray-400  hover:flex hover:w-[110px] hover:bg-gradient-to-r hover:transition-all hover:duration-200  after:hover:px-2 after:hover:text-white after:hover:content-['Phone']">
+            <button className=" rounded-xl from-green-300 to-blue-400  p-2 text-gray-400  hover:flex hover:w-[110px] hover:bg-gradient-to-r hover:transition-all hover:duration-200  after:hover:px-2 after:hover:text-white after:hover:content-['Phone']">
               <Icon
                 className="h-6 w-6 stroke-current text-gray-400 "
                 icon="circum:mobile-4"
@@ -151,7 +152,7 @@ export default function Sidbar() {
           </button>
         </header>
         <main className="flex-1 overflow-y-scroll px-12">
-          <div className=" my-12 h-screen bg-white"></div>
+          <div className=" my-12 h-screen bg-white">{children}</div>
         </main>
       </div>
       <aside className="flex h-screen w-[300px] flex-col border-l border-gray-200 bg-white">
